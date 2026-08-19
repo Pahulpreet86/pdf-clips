@@ -53,12 +53,12 @@ The script is at `skills/extract-highlights/scripts/highlight_extractor.py`. Wit
 
 ### In the Claude app
 
-1. Download this repo as a ZIP (**Code → Download ZIP**, or grab the release zip).
+1. Download clips-plugin.zip .
 2. In Claude, open **Settings → Plugins** and upload the ZIP file.
 3. Start a chat, **attach the PDF** you want to extract highlights from, and run:
 
    ```
-   /clips:extract-highlights
+   /extract-highlights
    ```
 
    Or just ask in plain language — "extract my highlights from this PDF" — and the `extract-highlights` skill fires automatically.
