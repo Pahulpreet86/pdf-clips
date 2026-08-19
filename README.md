@@ -51,7 +51,23 @@ python3 highlight_extractor.py input.pdf -o notes.md
 
 The script is at `skills/extract-highlights/scripts/highlight_extractor.py`. Without `-o`, it writes `<pdf name>_highlights.md` next to the source PDF.
 
-### As a Claude plugin
+### In the Claude app
+
+1. Download this repo as a ZIP (**Code → Download ZIP**, or grab the release zip).
+2. In Claude, open **Settings → Plugins** and upload the ZIP file.
+3. Start a chat, **attach the PDF** you want to extract highlights from, and run:
+
+   ```
+   /clips:extract-highlights
+   ```
+
+   Or just ask in plain language — "extract my highlights from this PDF" — and the `extract-highlights` skill fires automatically.
+
+Claude returns the Markdown file for you to download.
+
+> **Note:** In the Claude app, PDF pages count toward the chat's 100-image limit, so large documents (or several runs in one chat) can hit that wall. Running the script locally avoids the limit entirely.
+
+### As a Claude Code plugin
 
 Copy the plugin folder into your skills directory:
 
@@ -59,9 +75,7 @@ Copy the plugin folder into your skills directory:
 cp -r clips ~/.claude/skills/
 ```
 
-Because it contains `.claude-plugin/plugin.json`, Claude Code loads it on the next session (verify with `claude plugin list`). Load it for a single session with `claude --plugin-dir /path/to/clips`, or publish it through a [marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Invoke it in chat with `/clips:extract-highlights` or a plain-language request like "extract my highlights from thesis.pdf".
-
-> **Note:** Inside the Claude app, PDF pages count toward the chat's 100-image limit, so large documents can hit that wall. Running the script locally avoids the limit entirely.
+Because it contains `.claude-plugin/plugin.json`, Claude Code loads it on the next session (verify with `claude plugin list`). Load it for a single session with `claude --plugin-dir /path/to/clips`, or publish it through a [marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Invoke it with `/clips:extract-highlights` or a plain-language request.
 
 ## Options
 
@@ -104,3 +118,11 @@ clips/
 ├── README.md
 └── CHANGELOG.md
 ```
+
+## Contributing
+
+Issues and pull requests welcome. If you hit a PDF that Clips doesn't group cleanly, open an issue with details.
+
+## License
+
+[MIT](LICENSE)
