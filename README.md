@@ -122,7 +122,3 @@ clips/
 ## Contributing
 
 Issues and pull requests welcome. If you hit a PDF that Clips doesn't group cleanly, open an issue with details.
-
-## License
-
-[MIT](LICENSE)
